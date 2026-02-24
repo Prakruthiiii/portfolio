@@ -57,3 +57,60 @@ ul {
 .btn:hover {
     background-color: #1e40af;
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #111;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.resume-btn {
+  background: #00adb5;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.section {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.project-box {
+  background: #f4f4f4;
+  padding: 20px;
+  margin: 20px auto;
+  width: 60%;
+  border-radius: 8px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  display: inline-block;
+  margin: 10px;
+  background: #00adb5;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: white;
+}
