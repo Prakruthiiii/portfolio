@@ -49,17 +49,24 @@ body {
 
 /* HERO SECTION */
 .hero {
-  height: 90vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
+  padding: 0 20px;
 }
 
-.hero h1 {
+    .hero h1 {
   font-size: 48px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 600px;
+  opacity: 0.8;
+  line-height: 1.6;
 }
 
 .hero span {
