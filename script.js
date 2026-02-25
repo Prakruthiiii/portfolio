@@ -1,13 +1,37 @@
-const sections = document.querySelectorAll(".section");
+const textArray = [
+  "Web Developer",
+  "Java Developer"
+];
 
-window.addEventListener("scroll", () => {
-  sections.forEach(section => {
-    const position = section.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
+let index = 0;
+let charIndex = 0;
+let currentText = "";
+let isDeleting = false;
 
-    if(position < screenPosition){
-      section.style.opacity = "1";
-      section.style.transform = "translateY(0)";
+function typeEffect() {
+  const typingElement = document.getElementById("typing");
+  currentText = textArray[index];
+
+  if (!isDeleting) {
+    typingElement.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentText.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1000);
+      return;
     }
-  });
-});
+  } else {
+    typingElement.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % textArray.length;
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? 50 : 100);
+}
+
+typeEffect();
